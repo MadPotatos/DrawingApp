@@ -5,28 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
+<FrameLayout
+    android:id="@+id/fl_drawing_view_container"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="5dp"
+    android:padding="1dp"
+    android:background="@drawable/drawing_view_background"
+    app:layout_constraintBottom_toTopOf="@id/ll_paint_color"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test"
+        />
     <com.example.drawingapp.DrawingView
         android:id="@+id/drawing_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/drawing_view_background"
-        app:layout_constraintBottom_toTopOf="@id/ll_paint_color"
-       app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:background="#80FFFFFF"
+         android:layout_height="match_parent"
+        android:layout_width="match_parent"
+  />
+</FrameLayout>
+
+
     <LinearLayout
         android:id="@+id/ll_paint_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/ib_brush"
+        app:layout_constraintBottom_toTopOf="@id/ll_option_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/drawing_view"
+        app:layout_constraintTop_toBottomOf="@id/fl_drawing_view_container"
         >
         <ImageButton
             android:layout_width="25dp"
@@ -124,17 +138,33 @@
             android:background="@color/white"
             />
     </LinearLayout>
-    <ImageButton
-        android:id="@+id/ib_brush"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/brush"
-        android:scaleType="fitXY"
+    <LinearLayout
+        android:id="@+id/ll_option_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/ll_paint_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:id="@+id/ib_image"
+            android:src="@drawable/picture"
+            android:scaleType="fitXY"
+            />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/ib_brush"
+        android:src="@drawable/brush"
+        android:scaleType="fitXY"
         />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
