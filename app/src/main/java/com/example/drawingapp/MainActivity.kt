@@ -1,13 +1,17 @@
 package com.example.drawingapp
 
 import android.app.Dialog
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import com.example.drawingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mImageButtonCurrentPaint: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +19,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.drawingView.setSizeforBrush(20.toFloat())
-
+        mImageButtonCurrentPaint = binding.llPaintColor[7] as ImageButton
+        mImageButtonCurrentPaint.setImageDrawable(
+            ContextCompat.getDrawable(this,R.drawable.pallet_pressed)
+        )
         binding.ibBrush.setOnClickListener{
             showBrushSizeDialog()
         }
