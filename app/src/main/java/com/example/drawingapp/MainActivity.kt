@@ -36,6 +36,7 @@ import java.io.FileOutputStream
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mImageButtonCurrentPaint: ImageButton
+    var customProgressDialog : Dialog? = null
 
     val openGalleryLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
@@ -90,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.ibSave.setOnClickListener{
             if(isReadStorageAllowed()){
+                showProgressDialog()
                 lifecycleScope.launch {
                     saveBitmapFile(getBitMapFromView(binding.flDrawingViewContainer))
                 }
@@ -190,6 +192,7 @@ class MainActivity : AppCompatActivity() {
                     result =  f.absolutePath
 
                     runOnUiThread{
+                        cancelProgressDialog()
                         if(result.isNotEmpty()){
                             Toast.makeText(
                                 this@MainActivity,"File saved sucessfully : $result",Toast.LENGTH_SHORT
@@ -209,5 +212,17 @@ class MainActivity : AppCompatActivity() {
 
         }
         return result
+    }
+    private fun showProgressDialog(){
+        customProgressDialog = Dialog(this)
+        customProgressDialog?.setContentView(R.layout.dialog_custom_progress)
+        customProgressDialog?.show()
+    }
+
+    private fun cancelProgressDialog(){
+        if(customProgressDialog != null){
+            customProgressDialog?.dismiss()
+            customProgressDialog = null
+        }
     }
 }

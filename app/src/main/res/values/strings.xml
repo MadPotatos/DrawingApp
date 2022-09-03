@@ -4,4 +4,5 @@
     <string name="undo">Undo</string>
     <string name="brushsize">BrushSize</string>
     <string name="saveimage">saveImage</string>
+    <string name="please_wait">Please wait...</string>
 </resources>
