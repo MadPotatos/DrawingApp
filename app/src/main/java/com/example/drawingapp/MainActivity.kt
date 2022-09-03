@@ -1,12 +1,15 @@
 package com.example.drawingapp
 
 import android.Manifest
-import android.app.Activity
+
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Context
+import android.content.Intent
+
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
@@ -21,6 +24,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mImageButtonCurrentPaint: ImageButton
 
+    val openGalleryLauncher: ActivityResultLauncher<Intent> =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            result ->
+            if(result.resultCode == RESULT_OK&& result.data!=null){
+                binding.ivBackground.setImageURI(result.data?.data)
+            }
+        }
+
     val requestPermission: ActivityResultLauncher<Array<String>> =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()){
             permissions ->
@@ -32,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                         this,"Permission granted.",Toast.LENGTH_LONG
 
                     ).show()
+                    val pickIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                    openGalleryLauncher.launch(pickIntent)
                 }else{
                     if(permissionName == Manifest.permission.READ_EXTERNAL_STORAGE){
                         Toast.makeText(
