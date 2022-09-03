@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Drawing App</string>
+    <string name="importImage">Import</string>
+    <string name="undo">Undo</string>
+    <string name="brushsize">BrushSize</string>
+    <string name="saveimage">saveImage</string>
 </resources>
