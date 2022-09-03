@@ -1,7 +1,7 @@
 package com.example.drawingapp
 
-import android.Manifest
 
+import android.Manifest
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
@@ -10,17 +10,16 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.media.MediaScannerConnection
-
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
@@ -77,12 +76,15 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.drawingView.setSizeforBrush(20.toFloat())
-        mImageButtonCurrentPaint = binding.llPaintColor[7] as ImageButton
+        mImageButtonCurrentPaint = binding.ibCurrentColor
         mImageButtonCurrentPaint.setImageDrawable(
             ContextCompat.getDrawable(this,R.drawable.pallet_pressed)
         )
         binding.ibBrush.setOnClickListener{
             showBrushSizeDialog()
+        }
+        binding.ibColor.setOnClickListener{
+            showColorPickerDialog()
         }
         binding.ibImage.setOnClickListener{
             requestStoragePermission()
@@ -98,6 +100,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+
+
+    private fun showColorPickerDialog(){
+        val colorDialog = Dialog(this)
+        colorDialog.setContentView(R.layout.dialog_color_picker)
+        colorDialog.setTitle("Color: ")
+        colorDialog.show()
     }
 
     private fun showBrushSizeDialog(){
@@ -127,6 +138,7 @@ class MainActivity : AppCompatActivity() {
             val imageButton = view as ImageButton
             val colorTag = imageButton.tag.toString()
             binding.drawingView.setColor(colorTag)
+            binding.ibCurrentColor.setBackgroundColor(Color.parseColor(colorTag))
 
             imageButton.setImageDrawable(
                 ContextCompat.getDrawable(this,R.drawable.pallet_pressed)

@@ -5,4 +5,5 @@
     <string name="brushsize">BrushSize</string>
     <string name="saveimage">saveImage</string>
     <string name="please_wait">Please wait...</string>
+    <string name="pickcolor">Color</string>
 </resources>
