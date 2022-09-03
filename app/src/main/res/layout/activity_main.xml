@@ -5,31 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<FrameLayout
-    android:id="@+id/fl_drawing_view_container"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_margin="5dp"
-    android:padding="1dp"
-    android:background="@drawable/drawing_view_background"
-    app:layout_constraintBottom_toTopOf="@id/ll_paint_color"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-    <ImageView
-        android:id="@+id/iv_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/test"
-        />
-    <com.example.drawingapp.DrawingView
-        android:id="@+id/drawing_view"
-        android:background="#80FFFFFF"
-         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-  />
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_drawing_view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:padding="1dp"
+        android:background="@drawable/drawing_view_background"
+        app:layout_constraintBottom_toTopOf="@id/ll_paint_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"
+            />
+        <com.example.drawingapp.DrawingView
+            android:id="@+id/drawing_view"
+            android:background="#80FFFFFF"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+    </FrameLayout>
 
 
     <LinearLayout
@@ -60,7 +60,7 @@
             android:background="@color/green"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -70,7 +70,7 @@
             android:background="@color/red"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -80,7 +80,7 @@
             android:background="@color/aqua"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -90,7 +90,7 @@
             android:background="@color/fuchsia"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -100,7 +100,7 @@
             android:background="@color/gray"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -110,7 +110,7 @@
             android:background="@color/blue"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -120,7 +120,7 @@
             android:background="@color/black"
             android:onClick="painClicked"
             tools:ignore="UsingOnClickInXml" />
-            />
+        />
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
@@ -155,15 +155,26 @@
             android:id="@+id/ib_image"
             android:src="@drawable/picture"
             android:scaleType="fitXY"
+            android:tooltipText="Import"
             />
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:id="@+id/ib_brush"
-        android:src="@drawable/brush"
-        android:scaleType="fitXY"
-        />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:id="@+id/ib_undo"
+            android:src="@drawable/undo"
+            android:scaleType="fitXY"
+            android:tooltipText="Undo"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:id="@+id/ib_brush"
+            android:src="@drawable/brush"
+            android:scaleType="fitXY"
+            android:tooltipText="Choose Brush Size"
+            />
 
     </LinearLayout>
 

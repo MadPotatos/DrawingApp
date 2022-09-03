@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import com.example.drawingapp.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mImageButtonCurrentPaint: ImageButton
@@ -71,6 +72,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.ibImage.setOnClickListener{
             requestStoragePermission()
+        }
+        binding.ibUndo.setOnClickListener{
+            binding.drawingView.onClickUndo()
         }
     }
 
