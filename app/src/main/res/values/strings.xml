@@ -6,4 +6,5 @@
     <string name="saveimage">saveImage</string>
     <string name="please_wait">Please wait...</string>
     <string name="pickcolor">Color</string>
+    <string name="select_a_color">Select a Color</string>
 </resources>
