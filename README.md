@@ -3,7 +3,7 @@
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 
 
-![color](https://user-images.githubusercontent.com/83566086/188310949-f7abc68c-c622-4bea-ade0-e700d5f70a49.png)
+![color](https://user-images.githubusercontent.com/83566086/188310949-f7abc68c-c622-4bea-ade0-e700d5f70a49.png width="400" height="400")
 
 An android drawing app built with Kotlin and Android Studio
 
@@ -23,13 +23,13 @@ $ git clone https://github.com/MadPotatos/DrawingApp.git
 
 ### Running
 ####  Requirements
-Android Studio
+- Android Studio
 
-Git
+- Git
 
-Android build tools v 26+
+- Android build tools v 26+
 
-An Android phone 12.0 and up
+- An Android phone 12.0 and up
 
 ####  Steps
 Open `gradle.build` in Android Studio and run the app on an emulator or directly on a device.
@@ -47,4 +47,5 @@ Open `gradle.build` in Android Studio and run the app on an emulator or directly
 - Export your work and share with your friends
 # Screenshoot
 
-![image](https://user-images.githubusercontent.com/83566086/188311154-1f132fc1-9c30-4a6e-8194-cf38c11cf078.png)
+![image](https://user-images.githubusercontent.com/83566086/188311206-30439c8f-e6ad-4894-b647-46de93c83346.png)
+
