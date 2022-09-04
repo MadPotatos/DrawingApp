@@ -3,7 +3,7 @@
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 
 
-![color]<img src ="https://user-images.githubusercontent.com/83566086/188310949-f7abc68c-c622-4bea-ade0-e700d5f70a49.png" width="400" height="400">
+<img src ="https://user-images.githubusercontent.com/83566086/188310949-f7abc68c-c622-4bea-ade0-e700d5f70a49.png" width="50" height="50">
 
 An android drawing app built with Kotlin and Android Studio
 
